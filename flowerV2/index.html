@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Campo com Margaridas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="scene" id="scene">
+    <div class="falling-petals"></div>
+
+    <svg class="ground" viewBox="0 0 100 25" preserveAspectRatio="none">
+      <path d="M0 20 Q50 0 100 20 L100 25 L0 25 Z" fill="#2e8b57"/>
+    </svg>
+
+    <div class="flower-container main-flower" id="flower">
+      <svg class="flower glow" viewBox="0 0 200 250" xmlns="http://www.w3.org/2000/svg">
+        <!-- Caule -->
+        <line x1="100" y1="250" x2="100" y2="100" stroke="#3aaf3a" stroke-width="5" />
+
+        <!-- Folhas do caule -->
+        <ellipse cx="90" cy="180" rx="18" ry="7" fill="#3aaf3a" transform="rotate(-30 90 180)" />
+        <ellipse cx="110" cy="150" rx="18" ry="7" fill="#3aaf3a" transform="rotate(30 110 150)" />
+        <ellipse cx="90" cy="120" rx="14" ry="6" fill="#3aaf3a" transform="rotate(-20 90 120)" />
+        <ellipse cx="110" cy="100" rx="12" ry="5" fill="#3aaf3a" transform="rotate(25 110 100)" />
+
+        <!-- Pétalas -->
+        <defs>
+          <radialGradient id="petalGradient" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#ffffff"/>
+            <stop offset="100%" stop-color="#fdf5e6"/>
+          </radialGradient>
+        </defs>
+        <g fill="url(#petalGradient)">
+          <g transform="rotate(0,100,100)"><ellipse cx="100" cy="60" rx="16" ry="34"/></g>
+          <g transform="rotate(45,100,100)"><ellipse cx="100" cy="60" rx="16" ry="34"/></g>
+          <g transform="rotate(90,100,100)"><ellipse cx="100" cy="60" rx="16" ry="34"/></g>
+          <g transform="rotate(135,100,100)"><ellipse cx="100" cy="60" rx="16" ry="34"/></g>
+          <g transform="rotate(180,100,100)"><ellipse cx="100" cy="60" rx="16" ry="34"/></g>
+          <g transform="rotate(225,100,100)"><ellipse cx="100" cy="60" rx="16" ry="34"/></g>
+          <g transform="rotate(270,100,100)"><ellipse cx="100" cy="60" rx="16" ry="34"/></g>
+          <g transform="rotate(315,100,100)"><ellipse cx="100" cy="60" rx="16" ry="34"/></g>
+        </g>
+
+        <circle cx="100" cy="100" r="16" fill="gold" />
+      </svg>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
