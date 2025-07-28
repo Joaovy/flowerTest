@@ -10,44 +10,57 @@
   <div class="scene" id="scene">
     <div class="falling-petals"></div>
 
+   <div class="bush-container bush-left">
+    <svg class="bush" viewBox="0 0 160 120">
+      <ellipse cx="40" cy="90" rx="40" ry="30" fill="#388e3c"/>
+      <ellipse cx="80" cy="80" rx="50" ry="40" fill="#43a047"/>
+      <ellipse cx="120" cy="90" rx="35" ry="28" fill="#388e3c"/>
+      <ellipse cx="60" cy="60" rx="30" ry="22" fill="#66bb6a"/>
+      <ellipse cx="100" cy="60" rx="25" ry="18" fill="#81c784"/>
+    </svg>
+  </div>
+  <div class="bush-container bush-right">
+    <svg class="bush" viewBox="0 0 160 120">
+      <ellipse cx="40" cy="90" rx="40" ry="30" fill="#388e3c"/>
+      <ellipse cx="80" cy="80" rx="50" ry="40" fill="#43a047"/>
+      <ellipse cx="120" cy="90" rx="35" ry="28" fill="#388e3c"/>
+      <ellipse cx="60" cy="60" rx="30" ry="22" fill="#66bb6a"/>
+      <ellipse cx="100" cy="60" rx="25" ry="18" fill="#81c784"/>
+    </svg>
+  </div>
+
+    <!-- Grama base -->
     <svg class="ground" viewBox="0 0 100 25" preserveAspectRatio="none">
       <path d="M0 20 Q50 0 100 20 L100 25 L0 25 Z" fill="#2e8b57"/>
     </svg>
 
-    <div class="flower-container main-flower" id="flower">
-      <svg class="flower glow" viewBox="0 0 200 250" xmlns="http://www.w3.org/2000/svg">
-        <!-- Caule -->
-        <line x1="100" y1="250" x2="100" y2="100" stroke="#3aaf3a" stroke-width="5" />
+    <!-- Grama alta dinâmica -->
+    <div class="dynamic-grass" id="dynamic-grass"></div>
 
-        <!-- Folhas do caule -->
-        <ellipse cx="90" cy="180" rx="18" ry="7" fill="#3aaf3a" transform="rotate(-30 90 180)" />
-        <ellipse cx="110" cy="150" rx="18" ry="7" fill="#3aaf3a" transform="rotate(30 110 150)" />
-        <ellipse cx="90" cy="120" rx="14" ry="6" fill="#3aaf3a" transform="rotate(-20 90 120)" />
-        <ellipse cx="110" cy="100" rx="12" ry="5" fill="#3aaf3a" transform="rotate(25 110 100)" />
+    <!-- Detalhes de grama baixa -->
+    <svg class="grass-details" viewBox="0 0 100 25" preserveAspectRatio="none">
+      <g>
+        <path d="M5 22 Q6 18 7 22" stroke="#20703a" stroke-width="0.7" fill="none"/>
+        <path d="M12 22 Q13 17 14 22" stroke="#20703a" stroke-width="0.7" fill="none"/>
+        <path d="M20 22 Q21 19 22 22" stroke="#20703a" stroke-width="0.7" fill="none"/>
+        <path d="M35 22 Q36 18 37 22" stroke="#20703a" stroke-width="0.7" fill="none"/>
+        <path d="M50 22 Q51 17 52 22" stroke="#20703a" stroke-width="0.7" fill="none"/>
+        <path d="M65 22 Q66 19 67 22" stroke="#20703a" stroke-width="0.7" fill="none"/>
+        <path d="M80 22 Q81 18 82 22" stroke="#20703a" stroke-width="0.7" fill="none"/>
+        <path d="M90 22 Q91 20 92 22" stroke="#20703a" stroke-width="0.7" fill="none"/>
+      </g>
+    </svg>
 
-        <!-- Pétalas -->
-        <defs>
-          <radialGradient id="petalGradient" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#ffffff"/>
-            <stop offset="100%" stop-color="#fdf5e6"/>
-          </radialGradient>
-        </defs>
-        <g fill="url(#petalGradient)">
-          <g transform="rotate(0,100,100)"><ellipse cx="100" cy="60" rx="16" ry="34"/></g>
-          <g transform="rotate(45,100,100)"><ellipse cx="100" cy="60" rx="16" ry="34"/></g>
-          <g transform="rotate(90,100,100)"><ellipse cx="100" cy="60" rx="16" ry="34"/></g>
-          <g transform="rotate(135,100,100)"><ellipse cx="100" cy="60" rx="16" ry="34"/></g>
-          <g transform="rotate(180,100,100)"><ellipse cx="100" cy="60" rx="16" ry="34"/></g>
-          <g transform="rotate(225,100,100)"><ellipse cx="100" cy="60" rx="16" ry="34"/></g>
-          <g transform="rotate(270,100,100)"><ellipse cx="100" cy="60" rx="16" ry="34"/></g>
-          <g transform="rotate(315,100,100)"><ellipse cx="100" cy="60" rx="16" ry="34"/></g>
-        </g>
-
-        <circle cx="100" cy="100" r="16" fill="gold" />
-      </svg>
-    </div>
+    <!-- Pequenas flores na grama -->
+    <svg class="grass-flowers" viewBox="0 0 100 25" preserveAspectRatio="none">
+      <circle cx="10" cy="22" r="1" fill="#f9b3e6"/>
+      <circle cx="25" cy="21" r="1" fill="#b39ddb"/>
+      <circle cx="40" cy="23" r="1" fill="#fff0fa"/>
+      <circle cx="55" cy="22" r="1" fill="#f9b3e6"/>
+      <circle cx="70" cy="21" r="1" fill="#b39ddb"/>
+      <circle cx="85" cy="23" r="1" fill="#fff0fa"/>
+    </svg>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>
