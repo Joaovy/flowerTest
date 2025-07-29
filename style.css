@@ -151,11 +151,13 @@ body {
   opacity: 1;
   transform: scaleY(1);
   transform-origin: bottom center;
+
 }
 .flower-petalas {
   opacity: 1;
   transform: scale(1);
-  transition-delay: 0.3s;
+  transition-delay: 0.5s;
+  transform-origin: 100px 100px;
 }
 
 @keyframes fall {
