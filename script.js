@@ -170,9 +170,6 @@ smallFlowerPositions.forEach((pos, idx) => {
   });
 });
 
-
-
-
 const bushes = document.querySelectorAll('.bush-container');
 function animateBushes() {
   bushes.forEach((bush, i) => {
@@ -183,3 +180,82 @@ function animateBushes() {
   requestAnimationFrame(animateBushes);
 }
 animateBushes();
+/*
+document.addEventListener('mousemove', function(e) {
+  const scene = document.getElementById('scene');
+  const w = window.innerWidth;
+  const h = window.innerHeight;
+  const x = (e.clientX / w - 0.5) * 2; // -1 a 1
+  const y = (e.clientY / h - 0.5) * 2; // -1 a 1
+
+  // Movimento sutil
+  const leftTree = document.querySelector('.tree-left');
+  const rightTree = document.querySelector('.tree-right');
+  if (leftTree) {
+    leftTree.style.transform = `translateY(${y * 20}px) translateX(${x * 10}px) scale(1)`;
+  }
+  if (rightTree) {
+    rightTree.style.transform = `scaleX(-1) translateY(${y * 20}px) translateX(${-x * 10}px)`;
+  }
+}); */
+
+function animateTrees() {
+  const leftTree = document.querySelector('.tree-left');
+  const rightTree = document.querySelector('.tree-right');
+  // Aumente os multiplicadores para deixar mais rápido (ex: 0.06 e 0.03)
+  if (leftTree) {
+    leftTree.style.transform = `translateY(${currentY * 0.06}px) translateX(${currentX * 0.03}px) scale(1.15)`;
+  }
+  if (rightTree) {
+    rightTree.style.transform = `scaleX(-1) translateY(${currentY * 0.06}px) translateX(${-currentX * 0.03}px) scale(1.15)`;
+  }
+  requestAnimationFrame(animateTrees);
+}
+animateTrees();
+
+const sunsetLight = document.getElementById('sunset-light');
+function animateSunsetLight() {
+  if (sunsetLight) {
+    sunsetLight.style.transform = `translate(-50%, 0) translateX(${currentX * 0.06}px) translateY(${currentY * 0.03}px)`;
+  }
+  requestAnimationFrame(animateSunsetLight);
+}
+animateSunsetLight();
+
+// --- MODAL DE IMAGEM NAS FLORES ---
+
+// Caminhos das imagens
+const flowerImages = [
+  'folhaGota.jpeg', 
+  'Margaridas.jpeg',
+  'Montanhas.jpeg'
+];
+
+// Escolha 3 índices de flores para interação (exemplo: 2, 7, 12)
+const interactiveFlowers = [2, 7, 12];
+
+const modal = document.getElementById('image-modal');
+const modalImg = document.getElementById('modal-img');
+const backdrop = document.querySelector('.image-modal-backdrop');
+
+// Aguarde as flores serem criadas
+window.addEventListener('DOMContentLoaded', () => {
+  const flowers = document.querySelectorAll('.flower-container.small');
+  interactiveFlowers.forEach((flowerIdx, i) => {
+    const flower = flowers[flowerIdx];
+    if (flower) {
+      flower.style.cursor = 'pointer';
+      flower.addEventListener('click', (e) => {
+        e.stopPropagation();
+        modalImg.src = flowerImages[i];
+        modal.classList.add('active');
+      });
+    }
+  });
+});
+
+// Fechar ao clicar fora da imagem
+backdrop.addEventListener('click', () => {
+  modal.classList.remove('active');
+  setTimeout(() => { modalImg.src = ''; }, 400);
+});
